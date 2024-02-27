@@ -1,34 +1,43 @@
-import { Link } from 'react-router-dom';
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+
+import { Link, NavLink } from 'react-router-dom'
 
 const Navbar = () => {
+
+
+  const navLinks = [
+    {
+      name: "Host",
+      path: "/host"
+    },
+    {
+      name: "About",
+      path: "/about"
+    },
+    {
+      name: "Vans",
+      path: "/vans"
+    },
+  ]
   return (
     <>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">Navbar</Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link active" to="/home">Home</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Features</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Pricing</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link disabled" aria-disabled="true">Disabled</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <nav className="navbar bg-body-secondary">
+  <div className="container-fluid">
+    <Link to={"/"} className="navbar-brand"><h2>#VANLIFE</h2></Link>
+    <div className="d-flex gap-5" role="search">
+    <div className="d-flex gap-5" >
+    {
+                navLinks.map((data, i) => {
+                    return (
+                        <div key={i}>
+                            <NavLink  className={({isActive}) => (isActive? "text-info fw-bolder underline":"text-dark text-decoration-none")}  to={data.path}>{data.name}</NavLink>
+                        </div>
+                    );
+                })
+            }
+                </div>
+    </div>
+  </div>
+</nav>  
     </>
   )
 }
