@@ -1,7 +1,21 @@
 
-import './App.css'
-import Navbar from './Components/Navbar'
-import SignUp from './Components/Signup'
+import 'bootstrap/dist/js/bootstrap.js';
+import 'bootstrap/dist/css/bootstrap.css';
+import { Routes,Route, Navigate } from 'react-router-dom'
+import './App.css';
+import Layout from './components/Layout';
+import Home from './components/Home';
+import About from './components/About';
+import Vandetails from './components/Vandetails';
+import NotFound from './components/notFound';
+import 'react-toastify/dist/ReactToastify.css';
+import VanDescript from './components/VanDescript';
+import Host from './components/host';
+import HostVans from './components/HostVans';
+import HostIncome from './components/HostIncome';
+import HostReview from './components/HostReview';
+import HostDash from './components/HostDash';
+
 
 function App() {
 
